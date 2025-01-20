@@ -69,7 +69,7 @@ namespace GrandaPruebaPaises.ViewModel
         {
             if (string.IsNullOrEmpty(NombrePais))
             {
-                MensajeError = "Por favor ingresa un nombre de país.";
+                MensajeError = "Ingresa el nombre de un país";
                 IsErrorVisible = true;
                 return;
             }
