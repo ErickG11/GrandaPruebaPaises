@@ -18,6 +18,7 @@ namespace GrandaPruebaPaises.ViewModel
             _servicioBaseDeDatos = new ServicioBaseDeDatos();
             BuscarComando = new AsyncRelayCommand(BuscarPaisAsync);
             LimpiarComando = new RelayCommand(LimpiarCampos);
+            VerPaisesConsultadosComando = new RelayCommand(NavegarAVistaPaisesConsultados);
         }
 
         private string _nombrePais;
@@ -64,6 +65,7 @@ namespace GrandaPruebaPaises.ViewModel
 
         public ICommand BuscarComando { get; }
         public ICommand LimpiarComando { get; }
+        public ICommand VerPaisesConsultadosComando { get; }
 
         private async Task BuscarPaisAsync()
         {
@@ -77,18 +79,17 @@ namespace GrandaPruebaPaises.ViewModel
             var pais = await _servicioApi.ObtenerPaisPorNombreAsync(NombrePais);
             if (pais != null)
             {
-                
                 var nuevoPais = new Pais
                 {
                     Nombre = pais.Nombre,
                     Region = pais.Region,
                     EnlaceGoogleMaps = pais.EnlaceGoogleMaps,
-                    NombreBD = "EGranda"  
+                    NombreBD = "EGranda"
                 };
 
                 await _servicioBaseDeDatos.GuardarPaisAsync(nuevoPais);
 
-              
+
                 NombrePais = pais.Nombre;
                 Region = pais.Region;
                 EnlaceGoogleMaps = pais.EnlaceGoogleMaps;
@@ -111,6 +112,11 @@ namespace GrandaPruebaPaises.ViewModel
             NombreBD = string.Empty;
             MensajeError = string.Empty;
             IsErrorVisible = false;
+        }
+
+        private async void NavegarAVistaPaisesConsultados()
+        {
+            await Shell.Current.GoToAsync("VistaConsultado");
         }
     }
 }

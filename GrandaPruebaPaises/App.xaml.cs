@@ -1,18 +1,12 @@
-﻿using GrandaPruebaPaises.ViewModel;
-using GrandaPruebaPaises.Views;
+﻿namespace GrandaPruebaPaises;
 
-namespace GrandaPruebaPaises
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        public App()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            MainPage = new VistaPrincipal 
-            { 
-                BindingContext = new VistaPrincipalViewModel()
-            };
-        }
+        
+        MainPage = new AppShell(); 
     }
 }

@@ -1,15 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="GrandaPruebaPaises.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:GrandaPruebaPaises"
-    Shell.FlyoutBehavior="Disabled"
-    Title="GrandaPruebaPaises">
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:GrandaPruebaPaises.Views"
+       x:Class="GrandaPruebaPaises.AppShell">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
 
+    <TabBar>
+
+        <Tab Title="Vista Principal">
+            <ShellContent ContentTemplate="{DataTemplate views:VistaPrincipal}" />
+        </Tab>
+
+
+        <Tab Title="Paises Consultados">
+            <ShellContent ContentTemplate="{DataTemplate views:VistaConsultado}" />
+        </Tab>
+    </TabBar>
 </Shell>

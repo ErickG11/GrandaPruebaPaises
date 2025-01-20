@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GrandaPruebaPaises.Views.VistaConsultado"
              Title="VistaConsultado">
+    
     <StackLayout>
         <Label 
             Text="Paises Consultados"
             HorizontalOptions="Center"
             FontSize="24" />
+        
         <ListView x:Name="LVPaises">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -15,5 +17,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
     </StackLayout>
 </ContentPage>
