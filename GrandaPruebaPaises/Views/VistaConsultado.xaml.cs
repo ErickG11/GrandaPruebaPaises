@@ -15,6 +15,6 @@ public partial class VistaConsultado : ContentPage
 	private async void CargarPaises()
 	{
 		var ListPaises = await _servicioBaseDeDatos.ObtenerPaisesAsync();
-        listViewPaises.ItemsSource = ListPaises;
+        LVPaises.ItemsSource = ListPaises;
 	}
 }

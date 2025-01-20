@@ -8,7 +8,7 @@
             Text="Paises Consultados"
             HorizontalOptions="Center"
             FontSize="24" />
-        <ListView x:Name="listViewPaises">
+        <ListView x:Name="LVPaises">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Nombre}" Detail="{Binding Region}"/>
