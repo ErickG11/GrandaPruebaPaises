@@ -7,5 +7,6 @@ public partial class VistaPrincipal : ContentPage
 	public VistaPrincipal()
 	{
 		InitializeComponent();
+		BindingContext = new VistaPrincipalViewModel();
 	}
 }

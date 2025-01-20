@@ -1,4 +1,7 @@
-﻿namespace GrandaPruebaPaises
+﻿using GrandaPruebaPaises.ViewModel;
+using GrandaPruebaPaises.Views;
+
+namespace GrandaPruebaPaises
 {
     public partial class App : Application
     {
@@ -6,7 +9,10 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new VistaPrincipal 
+            { 
+                BindingContext = new VistaPrincipalViewModel()
+            };
         }
     }
 }
