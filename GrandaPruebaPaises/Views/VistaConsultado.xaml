@@ -1,22 +1,25 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="GrandaPruebaPaises.Views.VistaConsultado"
              Title="VistaConsultado">
-    
+
     <StackLayout>
-        <Label 
-            Text="Paises Consultados"
-            HorizontalOptions="Center"
-            FontSize="24" />
-        
-        <ListView x:Name="LVPaises">
+        <Label Text="Paises Consultados"
+               HorizontalOptions="Center"
+               FontSize="24" />
+
+        <ListView x:Name="LVPaises" ItemsSource="{Binding PaisesConsultados}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Nombre}" Detail="{Binding Region}"/>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Nombre}" FontSize="18" />
+                            <Label Text="{Binding Region}" FontSize="14" />
+                            <Label Text="{Binding EnlaceGoogleMaps}" FontSize="12" />
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        
     </StackLayout>
 </ContentPage>
